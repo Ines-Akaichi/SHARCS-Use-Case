@@ -1918,11 +1918,18 @@ foaf:Agent
     rdfs:isDefinedBy <http://example.org/odrl:profile:01/> ;
     rdfs:label "DiplomaInformation"@en ;
     skos:definition "."@en .
+
+<http://example.org/odrl:profile:01/#Consent> 
+     a rdfs:Class , owl:Class, skos:Concept ;
+    rdfs:isDefinedBy <http://example.org/odrl:profile:01/> ;
+    rdfs:label "Consent"@en ;
+    skos:definition "."@en .
+
 :Asset 
    rdfs:subClassOf [
         a owl:Class ;
         owl:unionOf ( <http://example.org/odrl:profile:01/#Subscription>    <http://example.org/odrl:profile:01/#UsageContract>  
-        <http://example.org/odrl:profile:01/#DiplomaInformation> ) ;
+        <http://example.org/odrl:profile:01/#DiplomaInformation> <http://example.org/odrl:profile:01/#Consent>  ) ;
     ].
 
 ## Asset and Party Profile
