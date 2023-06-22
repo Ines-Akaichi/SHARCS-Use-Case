@@ -46,10 +46,10 @@ ex:bob  a  odrlp:DataSubject ;
 cert:key <https://bob.solid.me/profile/card#me> .
 
 
-ex:consentBobToDP  a  odrlp:Consent ;      
+ex:consentBobToDP  a  odrlp:Consent ;   
+odrl:action odrl:obtainConsent ;   
 odrl:consentingParty  ex:bob ;                 
 odrl:consentedParty   ex:providerDPV  .
-
 
 ex:Session2300 a odrlp:Session . 
 
