@@ -1,0 +1,48 @@
+@prefix cc:      <http://creativecommons.org/ns#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix odrl:    <http://www.w3.org/ns/odrl/2/> .
+@prefix odrlp:    <http://example.org/odrl:profile:01/> .
+@prefix ex:    <http://example.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+
+<http://example.org/policy/policy-authorization> 
+a odrl:Set;
+odrl:profile   <http://example.org/odrl:profile:01/>;
+odrl:permission 
+[
+##odrl:assigner [a odrlp:DataConsumer] ;
+odrl:assignee 
+	[
+		a odrlp:User;
+		odrlp:worksIn 
+			[	a foaf:Organization ;
+				foaf:name ex:organizationABC ;
+				cert:key <https://example-organitation-ABC.com> 
+				odrlp:offers  
+					[	a odrlp:Membership ;
+						rdfs:label ex:membershipABC  ;
+						cert:key <https://example-membership-ABC.com> ] 
+				
+			] ;
+		odrlp:isMemberOf 
+					[	a odrlp:Membership ;
+						rdfs:label ex:membershipABC  ;
+						cert:key <https://example-membership-ABC.com> ];
+		odrlp:isPartOf 
+			[a odrlp:Subscription ;
+			odrlp:hasSubscriber 
+					[	a foaf:Organization ;
+						foaf:name ex:organizationABC ;
+						cert:key <https://example-organitation-ABC.com> ] ;
+			odrlp:hasProvider 
+					[	a odrlp:DataConsumer ;
+						rdfs:label ex:providerDPV ;
+						cert:key <https://example-app-consumer.com>   ] ] ;
+	];
+odrl:action  odrlp:grantAccess ;
+odrl:target  [a odrl:Session]            #Session should be an asset
+
+].
