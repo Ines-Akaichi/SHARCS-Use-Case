@@ -9,7 +9,7 @@
 @prefix cert: <http://www.w3.org/ns/auth/cert>.
 
 
-<http://example.org/policy/policy-authorization> 
+<http://example.org/policy/policy-authorization-organizationABC> 
 a odrl:Set;
 odrl:profile   <http://example.org/odrl:profile:01/>;
 odrl:permission 
@@ -44,6 +44,6 @@ odrl:assignee
 						cert:key <https://example-app-consumer.com>   ] ] ;
 	];
 odrl:action  odrlp:grantAccess ;
-odrl:target  [a odrl:Session]            #Session should be an asset
+odrl:target  [a odrl:Session]            #Session should be an asset 
 
 ].
