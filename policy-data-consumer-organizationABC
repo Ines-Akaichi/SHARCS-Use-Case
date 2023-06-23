@@ -6,6 +6,7 @@
 @prefix odrlp:    <http://example.org/odrl:profile:01/> .
 @prefix ex:    <http://example.org/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cert: <http://www.w3.org/ns/auth/cert>.
 
 
 <http://example.org/policy/policy-authorization> 
@@ -20,7 +21,7 @@ odrl:assignee
 		odrlp:worksIn 
 			[	a foaf:Organization ;
 				foaf:name ex:organizationABC ;
-				cert:key <https://example-organitation-ABC.com> 
+				cert:key <https://example-organitation-ABC.com> ;
 				odrlp:offers  
 					[	a odrlp:Membership ;
 						rdfs:label ex:membershipABC  ;
