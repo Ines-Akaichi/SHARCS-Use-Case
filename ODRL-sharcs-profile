@@ -1929,7 +1929,7 @@ foaf:Agent
    rdfs:subClassOf [
         a owl:Class ;
         owl:unionOf ( <http://example.org/odrl:profile:01/#Subscription>    <http://example.org/odrl:profile:01/#UsageContract>  
-        <http://example.org/odrl:profile:01/#DiplomaInformation> <http://example.org/odrl:profile:01/#Consent>  ) ;
+        <http://example.org/odrl:profile:01/#DiplomaInformation> <http://example.org/odrl:profile:01/#Consent>  <http://example.org/odrl:profile:01/#Session>) ;
     ].
 
 ## Asset and Party Profile

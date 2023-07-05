@@ -14,7 +14,6 @@ a odrl:Set;
 odrl:profile   <http://example.org/odrl:profile:01/>;
 odrl:permission 
 [
-##odrl:assigner [a odrlp:DataConsumer] ;
 odrl:assignee 
 	[
 		a odrlp:User;
