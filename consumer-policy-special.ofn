@@ -1,0 +1,35 @@
+
+Prefix(odrl:=<http://www.w3.org/ns/odrl/2#>)
+Prefix(odrlp:=<http://example.org/odrl:profile:01#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(ex:=<http://example.org#>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(foaf:=<http://xmlns.com/foaf/0.1/#>)
+Prefix(cert:=<http://www.w3.org/ns/auth/cert#>)
+Prefix(spl:=</langs/usage-policy#>)
+
+
+ObjectIntersectionOf (
+        ObjectSomeValuesFrom (spl:hasRecipient 
+        ObjectIntersectionOf(
+            ObjectSomeValuesFrom (rdf:type ex:User)
+            ObjectSomeValuesFrom (ex:worksIn 
+                ObjectIntersectionOf(
+                    ObjectSomeValuesFrom(rdf:type foaf:Organization)
+                    ObjectSomeValuesFrom(cert:key "https://example-organization-ABC.com")
+                    ObjectSomeValuesFrom(ex:offers  "https://example-membership-ABC.com") 
+                )
+            )
+            ObjectSomeValuesFrom (ex:isMemberOf "https://example-membership-ABC.com")
+            ObjectSomeValuesFrom (ex:isPartOf 
+                ObjectIntersectionOf(
+                    ObjectSomeValuesFrom (rdf:type odrlp:Subscription)
+                    ObjectSomeValuesFrom (ex:hasSubscriber  "https://example-organization-ABC.com")
+                    ) 
+             )
+         )
+        )
+        ObjectSomeValuesFrom(spl:hasProcessing ex:grantAccess)
+        ObjectSomeValuesFrom(spl:hasData ex:Session)
+)
