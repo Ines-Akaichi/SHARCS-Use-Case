@@ -7,6 +7,7 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/#> .
 @prefix cert: <http://www.w3.org/ns/auth/cert#> .
 @prefix spl: </langs/usage-policy#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 
 
 spl:Authorization rdf:type owl:Class ;
@@ -26,5 +27,6 @@ spl:hasRecipient
           ]
     ] ;
 spl:hasProcessing ex:grantAccess ;
-spl:hasData ex:Session .
+spl:hasData [a ex:Session ]
+
  ] .
