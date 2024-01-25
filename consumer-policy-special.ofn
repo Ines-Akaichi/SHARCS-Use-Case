@@ -7,9 +7,12 @@ Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
 Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
 Prefix(foaf:=<http://xmlns.com/foaf/0.1/#>)
 Prefix(cert:=<http://www.w3.org/ns/auth/cert#>)
-Prefix(spl:=</langs/usage-policy#>)
+Prefix(spl:=<http://specialprivacy.ercim.eu/langs/usage-policy#>)
 
 
+
+EquivalentClasses
+(spl:Authorization
 ObjectIntersectionOf (
         ObjectSomeValuesFrom (spl:hasRecipient 
         ObjectIntersectionOf(
@@ -32,4 +35,5 @@ ObjectIntersectionOf (
         )
         ObjectSomeValuesFrom(spl:hasProcessing ex:grantAccess)
         ObjectSomeValuesFrom(spl:hasData ex:Session)
+)
 )
